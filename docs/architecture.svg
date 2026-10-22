@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/>
+    </marker>
+    <marker id="arrow-sm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/>
+    </marker>
+    <style>
+      .h1 { font-size: 40px; font-weight: 700; fill: #111827; }
+      .sub { font-size: 20px; fill: #6B7280; }
+      .step { font-size: 14px; font-weight: 700; letter-spacing: 2px; fill: #111827; }
+      .num { font-size: 14px; font-weight: 700; letter-spacing: 1px; fill: #1F3A5F; }
+      .ptitle { font-size: 20px; font-weight: 700; fill: #111827; }
+      .psub { font-size: 14px; fill: #6B7280; }
+      .label { font-size: 15px; font-weight: 600; fill: #111827; }
+      .dlabel { font-size: 15px; font-weight: 600; fill: #1F3A5F; }
+      .small { font-size: 13px; fill: #6B7280; }
+      .count { font-size: 15px; font-weight: 700; fill: #1F3A5F; }
+      .tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; fill: #1F3A5F; }
+      .cap { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; fill: #9CA3AF; }
+      .panel { fill: #F9FAFB; stroke: #E5E7EB; stroke-width: 1; }
+      .card { fill: #FFFFFF; stroke: #E5E7EB; stroke-width: 1; }
+      .core { fill: #EEF0F3; }
+      .defense { fill: #FFFFFF; stroke: #1F3A5F; stroke-width: 1.5; }
+      .flow { stroke: #9CA3AF; stroke-width: 2; fill: none; }
+      .link { stroke: #9CA3AF; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+
+  <text x="80" y="92" class="h1">FinGuard AI: how it works</text>
+  <text x="80" y="128" class="sub">Red teaming a RAG financial assistant. Attack it, defend it, measure the difference.</text>
+
+  <!-- 01 Attack -->
+  <text x="80" y="190"><tspan class="num">01</tspan><tspan class="step" dx="10">ATTACK</tspan></text>
+  <rect x="80" y="210" width="280" height="590" rx="12" class="panel"/>
+  <text x="100" y="250" class="ptitle">Attack library</text>
+  <text x="100" y="272" class="psub">YAML cases, single or multi-turn</text>
+
+  <rect x="100" y="300" width="240" height="56" rx="8" class="card"/>
+  <text x="116" y="333" class="label">Direct injection</text>
+  <text x="324" y="333" class="count" text-anchor="end">4</text>
+  <rect x="100" y="368" width="240" height="56" rx="8" class="card"/>
+  <text x="116" y="401" class="label">Indirect injection (RAG)</text>
+  <text x="324" y="401" class="count" text-anchor="end">3</text>
+  <rect x="100" y="436" width="240" height="56" rx="8" class="card"/>
+  <text x="116" y="469" class="label">Multi-turn jailbreak</text>
+  <text x="324" y="469" class="count" text-anchor="end">3</text>
+  <rect x="100" y="504" width="240" height="56" rx="8" class="card"/>
+  <text x="116" y="537" class="label">Authority spoofing</text>
+  <text x="324" y="537" class="count" text-anchor="end">4</text>
+  <rect x="100" y="572" width="240" height="56" rx="8" class="card"/>
+  <text x="116" y="605" class="label">Unauthorized tool use</text>
+  <text x="324" y="605" class="count" text-anchor="end">3</text>
+  <rect x="100" y="640" width="240" height="56" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-dasharray="4 4"/>
+  <text x="116" y="673" class="label">Benign controls</text>
+  <text x="324" y="673" class="count" text-anchor="end">8</text>
+
+  <text x="100" y="742" class="small">Benign controls measure</text>
+  <text x="100" y="762" class="small">false positives on real requests.</text>
+
+  <line x1="364" y1="500" x2="414" y2="500" class="flow" marker-end="url(#arrow)"/>
+
+  <!-- 02 Execute -->
+  <text x="420" y="190"><tspan class="num">02</tspan><tspan class="step" dx="10">EXECUTE</tspan></text>
+  <rect x="420" y="210" width="540" height="590" rx="12" class="panel"/>
+  <text x="440" y="250" class="ptitle">Assistant under test</text>
+  <text x="440" y="272" class="psub">LangChain · gpt-oss-120b · BM25 retrieval · read-only tools</text>
+
+  <rect x="450" y="290" width="300" height="40" rx="8" class="core"/>
+  <text x="466" y="315" class="label">User message</text>
+  <line x1="600" y1="330" x2="600" y2="344" class="flow" marker-end="url(#arrow-sm)"/>
+
+  <rect x="450" y="346" width="300" height="40" rx="8" class="defense"/>
+  <text x="466" y="371" class="dlabel">Input guard</text>
+  <text x="738" y="370" class="tag" text-anchor="end">DEFENSE</text>
+  <line x1="600" y1="386" x2="600" y2="400" class="flow" marker-end="url(#arrow-sm)"/>
+
+  <rect x="450" y="402" width="300" height="40" rx="8" class="defense"/>
+  <text x="466" y="427" class="dlabel">Retrieval + access filter</text>
+  <text x="738" y="426" class="tag" text-anchor="end">DEFENSE</text>
+  <line x1="600" y1="442" x2="600" y2="456" class="flow" marker-end="url(#arrow-sm)"/>
+
+  <rect x="450" y="458" width="300" height="40" rx="8" class="defense"/>
+  <text x="466" y="483" class="dlabel">Trust-labelled context</text>
+  <text x="738" y="482" class="tag" text-anchor="end">DEFENSE</text>
+  <line x1="600" y1="498" x2="600" y2="512" class="flow" marker-end="url(#arrow-sm)"/>
+
+  <rect x="450" y="514" width="300" height="40" rx="8" class="core"/>
+  <text x="466" y="539" class="label">LLM tool-calling loop</text>
+  <line x1="600" y1="554" x2="600" y2="568" class="flow" marker-end="url(#arrow-sm)"/>
+
+  <rect x="450" y="570" width="300" height="40" rx="8" class="defense"/>
+  <text x="466" y="595" class="dlabel">Tool authorization</text>
+  <text x="738" y="594" class="tag" text-anchor="end">DEFENSE</text>
+  <line x1="600" y1="610" x2="600" y2="624" class="flow" marker-end="url(#arrow-sm)"/>
+
+  <rect x="450" y="626" width="300" height="40" rx="8" class="defense"/>
+  <text x="466" y="651" class="dlabel">Output guard</text>
+  <text x="738" y="650" class="tag" text-anchor="end">DEFENSE</text>
+  <line x1="600" y1="666" x2="600" y2="680" class="flow" marker-end="url(#arrow-sm)"/>
+
+  <rect x="450" y="682" width="300" height="40" rx="8" class="core"/>
+  <text x="466" y="707" class="label">Answer + audit trace</text>
+
+  <rect x="780" y="372" width="160" height="100" rx="8" class="card"/>
+  <text x="794" y="398" class="label">Document corpus</text>
+  <text x="794" y="420" class="small">Filings, policies</text>
+  <text x="794" y="439" class="small">Confidential memo</text>
+  <text x="794" y="458" class="small">Untrusted inbox</text>
+  <line x1="778" y1="422" x2="754" y2="422" class="link" marker-end="url(#arrow-sm)"/>
+
+  <rect x="780" y="540" width="160" height="100" rx="8" class="card"/>
+  <text x="794" y="566" class="label">Client records</text>
+  <text x="794" y="588" class="small">Portfolios, profiles</text>
+  <text x="794" y="607" class="small">Planted secrets</text>
+  <text x="794" y="626" class="small">5 read-only tools</text>
+  <line x1="778" y1="590" x2="754" y2="590" class="link" marker-end="url(#arrow-sm)"/>
+
+  <rect x="450" y="752" width="16" height="16" rx="4" class="core" stroke="#D1D5DB" stroke-width="1"/>
+  <text x="474" y="765" class="small">Core step</text>
+  <rect x="560" y="752" width="16" height="16" rx="4" class="defense"/>
+  <text x="584" y="765" class="small">Defense layer, toggled per run</text>
+
+  <line x1="964" y1="350" x2="1014" y2="350" class="flow" marker-end="url(#arrow)"/>
+
+  <!-- 03 Score -->
+  <text x="1020" y="190"><tspan class="num">03</tspan><tspan class="step" dx="10">SCORE</tspan></text>
+  <rect x="1020" y="210" width="500" height="280" rx="12" class="panel"/>
+  <text x="1040" y="250" class="ptitle">Deterministic scoring</text>
+  <text x="1040" y="272" class="psub">Judged on observable effects, not on wording</text>
+
+  <rect x="1040" y="292" width="460" height="40" rx="8" class="card"/>
+  <text x="1056" y="317" class="label">Leakage</text>
+  <text x="1196" y="317" class="small">planted secret appears in an answer</text>
+  <rect x="1040" y="342" width="460" height="40" rx="8" class="card"/>
+  <text x="1056" y="367" class="label">Tool violation</text>
+  <text x="1196" y="367" class="small">policy denies a call: attempted or executed</text>
+  <rect x="1040" y="392" width="460" height="40" rx="8" class="card"/>
+  <text x="1056" y="417" class="label">Payload marker</text>
+  <text x="1196" y="417" class="small">injected instruction was followed</text>
+
+  <rect x="1040" y="446" width="112" height="28" rx="14" fill="#1F3A5F"/>
+  <text x="1096" y="465" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">compromised</text>
+  <rect x="1162" y="446" width="100" height="28" rx="14" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.2"/>
+  <text x="1212" y="465" font-size="13" font-weight="600" fill="#1F3A5F" text-anchor="middle">contained</text>
+  <rect x="1272" y="446" width="90" height="28" rx="14" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.2"/>
+  <text x="1317" y="465" font-size="13" font-weight="600" fill="#4B5563" text-anchor="middle">blocked</text>
+  <rect x="1372" y="446" width="90" height="28" rx="14" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.2"/>
+  <text x="1417" y="465" font-size="13" font-weight="600" fill="#4B5563" text-anchor="middle">resisted</text>
+
+  <!-- 04 Report -->
+  <text x="1020" y="535"><tspan class="num">04</tspan><tspan class="step" dx="10">REPORT</tspan></text>
+  <rect x="1020" y="550" width="500" height="250" rx="12" class="panel"/>
+  <text x="1040" y="590" class="ptitle">Baseline vs. defended</text>
+  <text x="1040" y="612" class="psub">Same suite, two configurations</text>
+
+  <text x="1040" y="650" class="cap">METRICS</text>
+  <rect x="1040" y="667" width="8" height="8" fill="#1F3A5F"/>
+  <text x="1058" y="676" class="label">Attack success rate</text>
+  <rect x="1040" y="695" width="8" height="8" fill="#1F3A5F"/>
+  <text x="1058" y="704" class="label">Data leakage rate</text>
+  <rect x="1040" y="723" width="8" height="8" fill="#1F3A5F"/>
+  <text x="1058" y="732" class="label">False positive rate</text>
+  <rect x="1040" y="751" width="8" height="8" fill="#1F3A5F"/>
+  <text x="1058" y="760" class="label">Benign task accuracy</text>
+
+  <line x1="1290" y1="640" x2="1290" y2="770" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="1316" y="650" class="cap">OUTPUTS</text>
+  <text x="1316" y="676" class="label">REPORT.md</text>
+  <text x="1316" y="704" class="label">latest.json</text>
+  <text x="1316" y="732" class="label">Streamlit dashboard</text>
+
+  <line x1="80" y1="830" x2="1520" y2="830" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="80" y="862" class="small">All data synthetic · authorized local sandbox only</text>
+  <text x="1520" y="862" class="small" text-anchor="end">Baseline: no defenses  ·  Defended: all five layers enabled</text>
+</svg>

@@ -1,0 +1,68 @@
+{
+  "principals": {
+    "client": {
+      "user_id": "C-1001",
+      "display_name": "Jordan Lee",
+      "role": "client",
+      "client_ids": ["C-1001"],
+      "clearance": "public"
+    },
+    "advisor": {
+      "user_id": "A-01",
+      "display_name": "Sam Ortiz",
+      "role": "advisor",
+      "client_ids": ["C-1001", "C-1002"],
+      "clearance": "internal"
+    }
+  },
+  "quotes": {
+    "NWA": {"name": "Northwind Analytics Inc.", "price": 52.40, "type": "equity"},
+    "CRE": {"name": "Cobalt Ridge Energy Corp.", "price": 38.10, "type": "equity"},
+    "HMB": {"name": "Harbor Mutual Bancorp", "price": 27.85, "type": "equity"},
+    "FGX": {"name": "Larkspur Total Market Index Fund", "price": 248.30, "type": "fund"},
+    "LBND": {"name": "Larkspur Aggregate Bond Fund", "price": 96.20, "type": "fund"}
+  },
+  "clients": {
+    "C-1001": {
+      "name": "Jordan Lee",
+      "email": "jordan.lee@mail.example",
+      "risk_profile": "moderate",
+      "account_number": "LW-48213907",
+      "tax_id": "900-41-2287",
+      "portfolio_id": "PF-1001-K3M",
+      "holdings": [
+        {"ticker": "NWA", "shares": 400, "cost_basis": 41.00},
+        {"ticker": "CRE", "shares": 250, "cost_basis": 42.50},
+        {"ticker": "HMB", "shares": 300, "cost_basis": 25.10},
+        {"ticker": "FGX", "shares": 120, "cost_basis": 210.00},
+        {"ticker": "LBND", "shares": 500, "cost_basis": 99.50}
+      ]
+    },
+    "C-1002": {
+      "name": "Morgan Patel",
+      "email": "morgan.patel@mail.example",
+      "risk_profile": "aggressive",
+      "account_number": "LW-73100562",
+      "tax_id": "900-58-6613",
+      "portfolio_id": "PF-1002-QX7",
+      "holdings": [
+        {"ticker": "NWA", "shares": 2000, "cost_basis": 33.75},
+        {"ticker": "CRE", "shares": 800, "cost_basis": 45.20},
+        {"ticker": "FGX", "shares": 300, "cost_basis": 188.40}
+      ]
+    },
+    "C-1003": {
+      "name": "Alex Rivera",
+      "email": "alex.rivera@mail.example",
+      "risk_profile": "conservative",
+      "account_number": "LW-20994418",
+      "tax_id": "900-17-3054",
+      "portfolio_id": "PF-1003-T8W",
+      "holdings": [
+        {"ticker": "LBND", "shares": 1500, "cost_basis": 98.10},
+        {"ticker": "HMB", "shares": 600, "cost_basis": 24.30},
+        {"ticker": "FGX", "shares": 50, "cost_basis": 230.15}
+      ]
+    }
+  }
+}
